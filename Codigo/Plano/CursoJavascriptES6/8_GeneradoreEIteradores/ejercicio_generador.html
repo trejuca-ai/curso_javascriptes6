@@ -1,0 +1,44 @@
+<html>
+	<body>
+		<div id="container">
+			<p>Parrafo 1</p>
+			<ul>
+				<li>Elemento 1</li>
+				<li>Elemento 1</li>				
+			</ul>
+			<p>Parrafo 2</p>
+		</div>
+		<button id="next">Recorrer DOM</button>
+		<script type="text/javascript">
+		
+			function* recorrerDOM(nodo) {
+				if (!nodo) return
+				if (nodo.nodeType === Node.ELEMENT_NODE) {
+					console.log(nodo.nodeType)
+					yield nodo;
+				}
+					
+				nodo = nodo.firstChild
+				console.log(nodo)
+				while(nodo) {
+					yield* recorrerDOM(nodo)
+					nodo = nodo.nextSibling
+				}
+			}
+			
+			const container = document.getElementById('container')
+			const boton = document.getElementById('next')
+			const generador = recorrerDOM(container)
+			
+			boton.addEventListener('click', function() {
+				const { value, done } = generador.next()
+				if (done) {
+					alert('Todos los nodos se recorrieron')
+					boton.disabled = true
+				} else {
+					value.style.border = '1px solid red'
+				}
+			})
+		</script>
+	</body>
+</html>
