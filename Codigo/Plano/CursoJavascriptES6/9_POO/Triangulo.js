@@ -1,3 +1,5 @@
+const FiguraBidimensional = require('./FiguraBidimensional')
+
 class Triangulo extends FiguraBidimensional {
 	
 	constructor(base = 0.0, altura = 0.0, area = 0.0, perimetro = 0.0) {
@@ -14,3 +16,5 @@ class Triangulo extends FiguraBidimensional {
 		return 3 * this._base
 	}
 }
+
+module.exports = Triangulo

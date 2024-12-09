@@ -29,3 +29,5 @@ class Figura {
 		return this._perimetro
 	}
 }
+
+module.exports = Figura

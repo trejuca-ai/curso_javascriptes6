@@ -1,3 +1,5 @@
+const FiguraBidimensional = require('./FiguraBidimensional')
+
 class Circulo extends FiguraBidimensional {
 	
 	constructor(radio = 0.0, area = 0.0, perimetro = 0.0) {
@@ -21,3 +23,5 @@ class Circulo extends FiguraBidimensional {
 		return this._radio
 	}
 }
+
+module.exports = Circulo
