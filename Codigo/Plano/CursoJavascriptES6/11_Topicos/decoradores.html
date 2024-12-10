@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://unpkg.com/@babel/standalone@7.25.0/babel.min.js"></script>
+		<script type="text/babel">
+		  // Define a preset
+			Babel.registerPreset("env-plus", {
+  				presets: [[Babel.availablePresets["env"], { loose: true }]],
+  				plugins: [
+    				[
+      					Babel.availablePlugins["proposal-decorators"],
+      					{ decoratorsBeforeExport: false }
+    				],
+  				],
+			});
+		</script>
+
+	</head>
+	<body>
+		<script 
+			type="text/babel"  
+			data-presets="env-plus"
+			src="decorador_clase.js">
+
+		</script>
+	</body>
+</html>
