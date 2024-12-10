@@ -1,0 +1,113 @@
+body, html {
+    background-color: rgb(13, 44, 53);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    margin: 0 0 0 0; 
+    padding: 0px; 
+    max-width: 100%; 
+    border-color: red;
+}
+
+.fondo_contenedor {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: 
+        linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 70%),
+        url('../img/background.jpg') no-repeat center center; 
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    text-align: center;
+    filter: blur(5px) opacity(0.7)
+}
+
+.wrap {
+	box-shadow: 10px 10px 20px;
+
+}
+
+.negativo {
+	color: red;
+}
+
+.positivo {
+	color: green;
+}
+
+label {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+input[type="submit"]{
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    height: auto;
+}
+
+.cotizacion {
+    color: white;
+    text-align: center;
+}
+
+.scrollable {
+    height: 225px; 
+    overflow-y: auto;
+}
+
+form {
+    margin-top: 40px;
+}
+
+.encabezado_fila {
+	color: orange;	
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin: 100px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}

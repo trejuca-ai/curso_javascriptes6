@@ -41,12 +41,39 @@ const tablaComponent = {
 		})
 		
 		fila['acciones'].appendChild(function() {
+			
 			const linkEliminar = document.createElement('a')
+			const linkActualizar = document.createElement('a')
 			
 			linkEliminar.innerText = 'Eliminar'
 			linkEliminar.href = '#'
+			linkEliminar.classList = 'btn btn-danger'
+			linkEliminar.addEventListener('click', function() {
+				if (localStorage.getItem(data['id'])) {
+					localStorage.removeItem(data['id'])
+					inicializarAplicacion()
+				}
+			})
 			
-			return linkEliminar
-		})
+			linkActualizar.innerText = 'Editar'
+			linkActualizar.href = '#'
+			linkActualizar.setAttribute('class', 'btn btn-warning')
+			linkActualizar.addEventListener('click', function() {
+				if (localStorage.getItem(data['id'])) {
+					cargarUsuario(data)
+				}
+			})
+			
+			const contenedorLinks = document.createElement('div')
+			contenedorLinks.appendChild(linkActualizar)
+			contenedorLinks.appendChild(linkEliminar)
+			return contenedorLinks
+		}())
+	},
+	destruirTabla: function() {
+		
+		if (this.tabla !== null) {
+			this.tabla.remove()
+		}
 	}
 }

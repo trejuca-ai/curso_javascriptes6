@@ -45,10 +45,9 @@ const guardarUsuario = () => {
 		alert('Todos los campos son obligatorios')
 		return	
 	}
-	const {usuario, nombresColumnas} = leerFormulario()
+	const {usuario} = leerFormulario()
 	localStorage.setItem(usuario.id, JSON.stringify(usuario))
-	tablaComponent.construirTabla(nombresColumnas)
-	tablaComponent.actualizarTabla(usuario)
+	inicializarAplicacion()
 }
 
 /**
@@ -80,5 +79,23 @@ const validarFormulario = () => {
 	return Object.values(usuario).includes('')
 }
 
-
+/**
+ * Iniciar la aplicacion con los valores de localSotrage
+ */
+const inicializarAplicacion = () => {
+	
+	tablaComponent.destruirTabla()
+	
+	if (localStorage.length > 0) {
+		const {nombresColumnas} = leerFormulario()
+		tablaComponent.construirTabla(nombresColumnas)
+		
+		const ids = Object.keys(localStorage).sort((a, b) => a - b)
+		
+		ids.forEach((id, indice) => {
+			const usuario = JSON.parse(localStorage.getItem(ids[indice]))
+			tablaComponent.actualizarTabla(usuario)
+		})
+	}
+}
 

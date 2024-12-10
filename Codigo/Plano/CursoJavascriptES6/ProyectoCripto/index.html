@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div 
+            	class="four columns wrap"
+            	style="border: 1px solid">
+            	<div class="fondo_contenedor">
+            		
+            	</div>
+            </div>
+            <div class="eight columns">
+                <form id="formulario">
+                    <div class="row">
+                        <label>Moneda local</label>
+                        <select
+                            class="u-full-width"
+                            id="moneda"
+                            name="moneda">
+                                <option value="MXN">Peso Mexicano</option>
+                                <option value="USD">Dolar Americano</option>
+                                <option value="CNY">Yuan</option>
+                                <option value="EUR">Euro</option>
+                        </select>
+                    </div>
+
+                    <div class="row">
+                    <div>
+                        <label>Criptomonedas</label>
+                        <select 
+                            class="u-full-width"
+                            id="criptomonedas"
+                            name="criptomoneda"
+                            multiple
+                            style="height: 80pt"
+                        >
+                        </select>
+                    </div>
+                    </div>
+                    <input class="button-primary u-full-width" type="submit" value="Cotizar" />
+
+                    <div id="cotizacion" class="cotizacion scrollable">
+                    	<table class="u-full-width">
+                    	</table>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+    
+</body>
+</html>
