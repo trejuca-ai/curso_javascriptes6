@@ -1,25 +1,28 @@
-const  meta = {
-	titulo: 'titulo libro',
-	autores: [
-		{
-			primerNombre: 'Lot',
-			apellido: 'Alvarez'
-		},
-		{
-			primerNombre: 'Juan',
-			apellido: 'Trejo'
-		}
-	],
-	editor: {
-		nombre: 'porrua',
-		url: 'www.siteweb.com'
-	}
-}
+// Objeto que almacena metadatos de un libro
+const meta = {
+    titulo: 'titulo libro', // Titulo del libro
+    autores: [ // Lista de autores
+        {
+            primerNombre: 'Lot',
+            apellido: 'Alvarez'
+        },
+        {
+            primerNombre: 'Juan',
+            apellido: 'Trejo'
+        }
+    ],
+    editor: { // Informacion del editor
+        nombre: 'porrua',
+        url: 'www.siteweb.com'
+    }
+};
 
+// Desestructuracion para obtener los dos autores de la lista
+const [autor1, autor2] = meta.autores;
 
-const [autor1, autor2] = meta.autores
-console.log(autor1.apellido)
-console.log(autor2.apellido)
+// Muestra los apellidos de los autores en la consola
+console.log(autor1.apellido); // 'Alvarez'
+console.log(autor2.apellido); // 'Trejo'
 
 /*const {
 	titulo,

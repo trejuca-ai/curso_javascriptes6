@@ -12,18 +12,24 @@ function formatearObjectoConSimbolos(objeto) {
 	Object.getOwnPropertySymbols(objeto).forEach(symbol => {
 		resultado[symbol.description] = objeto[symbol]
 	})
-	
+	// Convertir el objeto resultado a formato JSON con indentacion
 	return JSON.stringify(resultado, null, 5)
 }
 
-const password = Symbol('password')
-const cliente = {
-	nombre: 'Juan',
-	apellido: 'Trejo'
-}
+// Crear un Symbol para la propiedad 'password'
+const password = Symbol('password');
 
-cliente[password] = 'hola123'
-console.log(formatearObjectoConSimbolos(cliente))
+// Crear un objeto con propiedades normales
+const cliente = {
+    nombre: 'Juan',
+    apellido: 'Trejo'
+};
+
+// Asignar una propiedad Symbol al objeto
+cliente[password] = 'hola123';
+
+// Mostrar el objeto formateado con las propiedades normales y Symbol
+console.log(formatearObjectoConSimbolos(cliente));
 
 
 
